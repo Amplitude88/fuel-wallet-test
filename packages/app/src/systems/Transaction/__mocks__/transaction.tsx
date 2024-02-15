@@ -1,0 +1,340 @@
+import { TransactionStatus, TransactionTypeName } from 'fuels';
+import { MOCK_CHAIN_INFO } from '~/systems/Network/__mocks__/chainInfo';
+
+export const MOCK_TRANSACTION_SCRIPT = {
+  id: '12132213231231',
+  type: TransactionTypeName.Script,
+  status: TransactionStatus.submitted,
+  data: undefined,
+};
+
+export const MOCK_TRANSACTION_CREATE = {
+  id: '12132213231231',
+  type: TransactionTypeName.Create,
+  status: TransactionStatus.submitted,
+  data: undefined,
+};
+
+export const MOCK_TRANSACTION_WITH_RECEIPTS_GQL = {
+  // this response is got from a simple "Send" transaction created from the wallet UI.
+  transaction: {
+    id: '0x1e1b1960c0f15534eb9b138101567e0dcbc31e394df106edd7abab1a7875614c',
+    __typename: 'Transaction',
+    gasPrice: '1',
+    maturity: '0',
+    txPointer: null,
+    isScript: true,
+    isCreate: false,
+    isMint: false,
+    witnesses: [
+      '0x803f4fb0c4f575a8e15fa01b6e3ba9d116d3ec5ae1249d7fe7f1a6b1d77d22f3740d676d4d1840ea40df8b99d94b1ed8348f72df7b3e76ad6d8e8ca8bbe18236',
+    ],
+    receiptsRoot:
+      '0xe7f678a2e8df7da272cf303aff96023da2ab1968b74d86bb92f5b558d38ed6bd',
+    script: '0x24000000',
+    scriptData: '0x',
+    bytecodeWitnessIndex: null,
+    bytecodeLength: null,
+    salt: null,
+    storageSlots: null,
+    rawPayload:
+      '0x00000000000000000000000000e4e1c0000000000000000400000000000000000000000000000001000000000000000100000000000000020000000000000001e7f678a2e8df7da272cf303aff96023da2ab1968b74d86bb92f5b558d38ed6bd2400000000000000000000000000000100000000000000007a8353e0c12f3893e99b8c50f9eaebb1278c85dad65adbbf8eb92b2b96207c3200000000000000013e7ddda4d0d3f8307ae5f1aed87623992c1c4decefec684936960775181b2302000000000097cdec0000000000000000000000000000000000000000000000000000000000000000000000000019a27d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000eeb709945b9058c3d50f3922bd1b49f92ced2950a9ecaf810aa7829295550cd20000000000002710000000000000000000000000000000000000000000000000000000000000000000000000000000023e7ddda4d0d3f8307ae5f1aed87623992c1c4decefec684936960775181b2302000000000097a36500000000000000000000000000000000000000000000000000000000000000000000000000000040803f4fb0c4f575a8e15fa01b6e3ba9d116d3ec5ae1249d7fe7f1a6b1d77d22f3740d676d4d1840ea40df8b99d94b1ed8348f72df7b3e76ad6d8e8ca8bbe18236',
+    status: {
+      __typename: 'SuccessStatus',
+      time: '4611686020132737762',
+      block: {
+        id: '0x0d477f50818d6597488309996758e922bc2e553832556e8de7d4747dc1d683ae',
+        header: {
+          id: '0x0d477f50818d6597488309996758e922bc2e553832556e8de7d4747dc1d683ae',
+          height: '2022716',
+          daHeight: '5092255',
+          applicationHash:
+            '0x047a9ba464f8f0e5c4392d3136f134a97ac5342c527d27444c9c51d399e4af36',
+          messageReceiptRoot:
+            '0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
+          messageReceiptCount: '0',
+          time: '4611686020132737762',
+        },
+      },
+      programState: {
+        data: '0x0000000000000000',
+      },
+    },
+    inputAssetIds: [
+      '0x0000000000000000000000000000000000000000000000000000000000000000',
+    ],
+    inputContracts: [],
+    inputs: [
+      {
+        __typename: 'InputCoin',
+        amount: '9948652',
+        assetId:
+          '0x0000000000000000000000000000000000000000000000000000000000000000',
+        owner:
+          '0x3e7ddda4d0d3f8307ae5f1aed87623992c1c4decefec684936960775181b2302',
+        predicate: '0x',
+        predicateData: '0x',
+        txPointer: '0019a27d0000',
+        utxoId:
+          '0x7a8353e0c12f3893e99b8c50f9eaebb1278c85dad65adbbf8eb92b2b96207c3201',
+        witnessIndex: 0,
+      },
+    ],
+    outputs: [
+      {
+        __typename: 'CoinOutput',
+        to: '0xeeb709945b9058c3d50f3922bd1b49f92ced2950a9ecaf810aa7829295550cd2',
+        amount: '10000',
+        assetId:
+          '0x0000000000000000000000000000000000000000000000000000000000000000',
+      },
+      {
+        __typename: 'ChangeOutput',
+        to: '0x3e7ddda4d0d3f8307ae5f1aed87623992c1c4decefec684936960775181b2302',
+        amount: '9937765',
+        assetId:
+          '0x0000000000000000000000000000000000000000000000000000000000000000',
+      },
+    ],
+    receipts: [
+      {
+        __typename: 'Receipt',
+        contract: null,
+        to: null,
+        pc: '10336',
+        is: '10336',
+        toAddress: null,
+        amount: null,
+        assetId: null,
+        gas: null,
+        param1: null,
+        param2: null,
+        val: '0',
+        ptr: null,
+        digest: null,
+        reason: null,
+        ra: null,
+        rb: null,
+        rc: null,
+        rd: null,
+        len: null,
+        receiptType: 'RETURN',
+        result: null,
+        gasUsed: null,
+        data: null,
+        sender: null,
+        recipient: null,
+        nonce: null,
+        contractId: null,
+        subId: null,
+      },
+      {
+        __typename: 'Receipt',
+        contract: null,
+        to: null,
+        pc: null,
+        is: null,
+        toAddress: null,
+        amount: null,
+        assetId: null,
+        gas: null,
+        param1: null,
+        param2: null,
+        val: null,
+        ptr: null,
+        digest: null,
+        reason: null,
+        ra: null,
+        rb: null,
+        rc: null,
+        rd: null,
+        len: null,
+        receiptType: 'SCRIPT_RESULT',
+        result: '0',
+        gasUsed: '733',
+        data: null,
+        sender: null,
+        recipient: null,
+        nonce: null,
+        contractId: null,
+        subId: null,
+      },
+    ],
+    time: {
+      fromNow: '9 days ago',
+      full: '15 Jan 2024 - 20:17:01 PM',
+      rawTai64: '4611686020132737762',
+      rawUnix: '1705349821',
+    },
+    groupedInputs: [
+      {
+        type: 'InputCoin',
+        totalAmount: '0x97cdec',
+        inputs: [
+          {
+            __typename: 'InputCoin',
+            amount: '9948652',
+            assetId:
+              '0x0000000000000000000000000000000000000000000000000000000000000000',
+            owner:
+              '0x3e7ddda4d0d3f8307ae5f1aed87623992c1c4decefec684936960775181b2302',
+            predicate: '0x',
+            predicateData: '0x',
+            txPointer: '0019a27d0000',
+            utxoId:
+              '0x7a8353e0c12f3893e99b8c50f9eaebb1278c85dad65adbbf8eb92b2b96207c3201',
+            witnessIndex: 0,
+          },
+        ],
+        contractId: null,
+        assetId:
+          '0x0000000000000000000000000000000000000000000000000000000000000000',
+        sender: null,
+        recipient: null,
+        data: null,
+        owner:
+          '0x3e7ddda4d0d3f8307ae5f1aed87623992c1c4decefec684936960775181b2302',
+      },
+    ],
+    groupedOutputs: [
+      {
+        to: '0xeeb709945b9058c3d50f3922bd1b49f92ced2950a9ecaf810aa7829295550cd2',
+        type: 'CoinOutput',
+        totalAmount: '0x2710',
+        outputs: [
+          {
+            __typename: 'CoinOutput',
+            to: '0xeeb709945b9058c3d50f3922bd1b49f92ced2950a9ecaf810aa7829295550cd2',
+            amount: '10000',
+            assetId:
+              '0x0000000000000000000000000000000000000000000000000000000000000000',
+          },
+        ],
+        contract: null,
+        assetId:
+          '0x0000000000000000000000000000000000000000000000000000000000000000',
+        inputIndex: null,
+        recipient: null,
+      },
+      {
+        to: '0x3e7ddda4d0d3f8307ae5f1aed87623992c1c4decefec684936960775181b2302',
+        type: 'ChangeOutput',
+        totalAmount: '0x97a365',
+        outputs: [
+          {
+            __typename: 'ChangeOutput',
+            to: '0x3e7ddda4d0d3f8307ae5f1aed87623992c1c4decefec684936960775181b2302',
+            amount: '9937765',
+            assetId:
+              '0x0000000000000000000000000000000000000000000000000000000000000000',
+          },
+        ],
+        contract: null,
+        assetId:
+          '0x0000000000000000000000000000000000000000000000000000000000000000',
+        inputIndex: null,
+        recipient: null,
+      },
+    ],
+    accountsInvolved: [
+      {
+        id: '0x3e7ddda4d0d3f8307ae5f1aed87623992c1c4decefec684936960775181b2302',
+        type: 'Predicate',
+      },
+    ],
+    isPredicate: false,
+    blockHeight: '2022716',
+    statusType: 'Success',
+    totalAccounts: 1,
+    totalAssets: 1,
+    totalOperations: 1,
+    gasUsed: '733',
+    title: 'Script',
+    fee: '0x377',
+    operations: [
+      {
+        __typename: 'Operation',
+        type: 'FINAL_RESULT',
+        receipts: [
+          {
+            item: {
+              __typename: 'Receipt',
+              contract: null,
+              to: null,
+              pc: '10336',
+              is: '10336',
+              toAddress: null,
+              amount: null,
+              assetId: null,
+              gas: null,
+              param1: null,
+              param2: null,
+              val: '0',
+              ptr: null,
+              digest: null,
+              reason: null,
+              ra: null,
+              rb: null,
+              rc: null,
+              rd: null,
+              len: null,
+              receiptType: 'RETURN',
+              result: null,
+              gasUsed: null,
+              data: null,
+              sender: null,
+              recipient: null,
+              nonce: null,
+              contractId: null,
+              subId: null,
+            },
+            receipts: null,
+          },
+          {
+            item: {
+              __typename: 'Receipt',
+              contract: null,
+              to: null,
+              pc: null,
+              is: null,
+              toAddress: null,
+              amount: null,
+              assetId: null,
+              gas: null,
+              param1: null,
+              param2: null,
+              val: null,
+              ptr: null,
+              digest: null,
+              reason: null,
+              ra: null,
+              rb: null,
+              rc: null,
+              rd: null,
+              len: null,
+              receiptType: 'SCRIPT_RESULT',
+              result: '0',
+              gasUsed: '733',
+              data: null,
+              sender: null,
+              recipient: null,
+              nonce: null,
+              contractId: null,
+              subId: null,
+            },
+            receipts: null,
+          },
+        ],
+      },
+    ],
+  },
+  chain: MOCK_CHAIN_INFO.chain,
+  nodeInfo: {
+    utxoValidation: true,
+    vmBacktrace: false,
+    minGasPrice: '1',
+    maxTx: '4064',
+    maxDepth: '10',
+    nodeVersion: '0.22.0',
+  },
+};

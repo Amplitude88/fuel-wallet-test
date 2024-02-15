@@ -1,0 +1,74 @@
+---
+title: Getting Started
+category: For Developers
+---
+
+# Getting Started
+
+The Fuel Wallet SDK serves as a connection manager between your DApp and other wallets compatible with the Fuel Network. This package ensures that you can connect to the Fuel Wallet as well as any other wallet using a unified API.
+
+If you are using **React** jump to the [React section](./#using-react).
+
+## Installation
+
+To begin integrating the Fuel Wallet SDK into your DApp, you first need to install the packages `@fuel-wallet/sdk` and `fuels`.
+
+```bash
+npm install @fuel-wallet/sdk fuels
+```
+
+The installation also requires the `fuels` SDK, as it is used to communicate with the Fuel Network and provides a set of utilities required for interacting with contracts on the Fuel Network.
+
+## Example
+
+```ts
+import { Fuel } from '@fuel-wallet/sdk';
+
+const fuel = new Fuel();
+
+await fuel.connect();
+```
+
+## Using React
+
+We also provide a set of React hooks and a UI for working with it connectors without,
+the need for manually create a UI, for it.
+
+### Installation
+
+```bash
+npm install @fuels/react fuels
+```
+
+### Example
+
+#### Setup
+
+Wrap your application with the provider `FuelConnectProvider`.
+
+```tsx
+import { FuelProvider } from '@fuels/react';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <FuelProvider>
+      <App />
+    </FuelProvider>
+  </React.StrictMode>
+);
+```
+
+Alternatively, you can use just the `FuelProvider` if you prefer not to use the provided UI.
+
+#### Usage
+
+```ts
+import { useConnectUI } from '@fuels/react';
+const { connect, isConnecting } = useConnectUI();
+
+<button onClick={connect}>
+  {isConnecting ? 'Connecting...' : 'Connect'}
+</button>
+```
+
+Check our example application for a [quick start](https://github.com/FuelLabs/fuels-wallet/tree/master/examples/cra-dapp).

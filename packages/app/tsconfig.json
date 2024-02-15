@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "keyofStringsOnly": true,
+    "ignoreDeprecations": "5.0",
+    "allowJs": true,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "~icons-url": ["./node_modules/@fuel-ui/icons/dist/icons/sprite.svg"],
+      "~public/*": ["./public/*"],
+      "~/*": ["./src/*"]
+    }
+  },
+  "include": ["./src", "./connect"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
